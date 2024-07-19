@@ -1,0 +1,212 @@
+
+.dots-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #b3d4fc;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.dot:last-child {
+  margin-right: 0;
+}
+
+.dot:nth-child(1) {
+  animation-delay: -0.3s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: -0.1s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    background-color: #b3d4fc;
+    box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+  }
+
+  50% {
+    transform: scale(1.2);
+    background-color: #6793fb;
+    box-shadow: 0 0 0 10px rgba(178, 212, 252, 0);
+  }
+
+  100% {
+    transform: scale(0.8);
+    background-color: #b3d4fc;
+    box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
+  }
+}
+
+
+.glitch {
+  position: relative;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  letter-spacing: 5px;
+  z-index: 1;
+  animation: shift 1s ease-in-out infinite alternate;
+}
+
+.glitch:before,
+.glitch:after {
+  display: block;
+  content: attr(data-glitch);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+.glitch:before {
+  animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  color: #8b00ff;
+  z-index: -1;
+}
+
+.glitch:after {
+  animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+  color: #00e571;
+  z-index: -2;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-3px, 3px);
+  }
+
+  40% {
+    transform: translate(-3px, -3px);
+  }
+
+  60% {
+    transform: translate(3px, 3px);
+  }
+
+  80% {
+    transform: translate(3px, -3px);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes shift {
+  0%, 40%, 44%, 58%, 61%, 65%, 69%, 73%, 100% {
+    transform: skewX(0deg);
+  }
+
+  41% {
+    transform: skewX(10deg);
+  }
+
+  42% {
+    transform: skewX(-10deg);
+  }
+
+  59% {
+    transform: skewX(40deg) skewY(10deg);
+  }
+
+  60% {
+    transform: skewX(-40deg) skewY(-10deg);
+  }
+
+  63% {
+    transform: skewX(10deg) skewY(-5deg);
+  }
+
+  70% {
+    transform: skewX(-50deg) skewY(-20deg);
+  }
+
+  71% {
+    transform: skewX(10deg) skewY(-10deg);
+  }
+}
+
+
+
+
+.beautiful-button {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to bottom, #1b1c3f, #4a4e91);
+ /* Gradient background */
+  color: white;
+ /* White text color */
+  font-family: "Segoe UI", sans-serif;
+ /* Stylish and legible font */
+  font-weight: bold;
+  font-size: 18px;
+ /* Large font size */
+  border: none;
+ /* No border */
+  border-radius: 30px;
+ /* Rounded corners */
+  padding: 14px 28px;
+ /* Large padding */
+  cursor: pointer;
+ /* Cursor on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+ /* Subtle shadow */
+  animation: button-shimmer 2s infinite;
+  transition: all 0.3s ease-in-out;
+ /* Smooth transition */
+}
+
+/* Hover animation */
+.beautiful-button:hover {
+  background: linear-gradient(to bottom, #2c2f63, #5b67b7);
+  animation: button-particles 1s ease-in-out infinite;
+  transform: translateY(-2px);
+}
+
+/* Click animation */
+.beautiful-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Shimmer animation */
+@keyframes button-shimmer {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
+
+/* Particle animation */
+@keyframes button-particles {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
