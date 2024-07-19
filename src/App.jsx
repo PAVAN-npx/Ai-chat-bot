@@ -14,7 +14,7 @@ function App() {
   async function generateAnswer(e) {
     setGeneratingAnswer(true);
     e.preventDefault();
-
+    setAnswer('');
     setanswerload(true);
     try {
       const response = await axios({
